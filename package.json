@@ -15,5 +15,8 @@
     "express": "^4.19.2",
     "node-telegram-bot-api": "^0.66.0",
     "webpack": "^5.92.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
   }
 }

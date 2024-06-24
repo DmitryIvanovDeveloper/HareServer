@@ -5,7 +5,7 @@ const TOKEN = "7465181661:AAFi1yZJTivlA_YMBSHeetaVjlcKGm4Uay4";
 const server = express();
 
 const port = process.env.PORT || 5000;
-const gameName = "HARE";
+const gameName = "HareTest";
 const queries = {};
 
 server.use(express.static(path.join(__dirname, 'public')));
@@ -53,10 +53,10 @@ const bot = new TelegramBot(TOKEN, {
     polling: true
 });
 bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "Say /start_game if you want to play."));
-bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
+bot.onText(/start_game/, (msg) => bot.sendGame(msg.from.id, gameName));
 bot.on("callback_query", function (query) {
     if (query.game_short_name !== gameName) {
-        bot.answerCallbackQuery(query.id, {text: 'test', show_alert: true});
+        bot.answerCallbackQuery(query.id, {text: 'Plase try again', show_alert: true});
         queries[query.id] = query;
         let gameurl = "https://dmitryivanovdeveloper.github.io/HareWeb/";
         bot.answerCallbackQuery(query.id, {text: 'Your message', url: gameurl});
