@@ -1,0 +1,17 @@
+{
+  "name": "hareserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "node index.js",
+    "start": "npm run build && node ./build/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.19.2",
+    "node-telegram-bot-api": "^0.66.0"
+  }
+}
